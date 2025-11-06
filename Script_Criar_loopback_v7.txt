@@ -1,0 +1,5 @@
+# Cria IPs 192.168.0.1 até 192.168.0.254 na interface 'lo'
+:for i from=0 to=254 do={
+    /ip address add address=("192.168.0." . $i . "/32") interface=lo
+    :delay 100ms
+}
